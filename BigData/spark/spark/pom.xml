@@ -11,6 +11,7 @@
 
     <modules>
         <module>spark-core</module>
+        <module>scala-learning</module>
     </modules>
 
     <!-- 声明公有属性-->

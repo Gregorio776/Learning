@@ -16,4 +16,7 @@ object WordCount extends App {
   //关闭spark连接
   sc.stop()
 
+
 }
+
+
