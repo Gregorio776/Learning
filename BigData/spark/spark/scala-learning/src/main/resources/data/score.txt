@@ -10,6 +10,3 @@ english John 92
 english Betty 84
 english Mike 90
 english Lily 85
-
-
-
