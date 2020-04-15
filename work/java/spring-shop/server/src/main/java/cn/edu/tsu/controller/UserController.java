@@ -3,7 +3,6 @@ package cn.edu.tsu.controller;
 import cn.edu.tsu.bean.User;
 import cn.edu.tsu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,17 +10,15 @@ import org.springframework.web.bind.annotation.*;
  * @author Gregorio
  * @date 2020/4/13 10:46
  */
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
 
     @PostMapping("/login")
-    public String login(String username, String password,Model model){
-        User user = userService.login(username, password);
-        model.addAttribute("user",user);
-        return "success";
+    public User login(String username, String password,Model model){
+        return userService.login(username, password);
     }
 
     @PostMapping("/reg")
@@ -33,8 +30,4 @@ public class UserController {
         return "fail";
     }
 
-    @RequestMapping(value = "/info",method = RequestMethod.GET)
-    public String info(){
-        return "login";
-    }
 }

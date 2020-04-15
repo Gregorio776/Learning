@@ -15,6 +15,6 @@ http://www.springframework.org/schema/context  http://www.springframework.org/sc
     </bean>
 
     <!-- 静态资源-->
-    <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/**" location="/"/>
     <mvc:annotation-driven/>
 </beans>

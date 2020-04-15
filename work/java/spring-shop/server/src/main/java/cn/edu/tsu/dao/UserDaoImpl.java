@@ -33,7 +33,7 @@ public class UserDaoImpl implements UserDao  {
     @Override
     public int insert(User user) {
         return jdbcTemplate.update("insert into user (username,password,age)values(?,?,?)",
-                user.getUsername(),user.getPassword(),user.getAge());
+               user.getUsername(),user.getPassword(),user.getAge());
     }
 
     @Override
