@@ -7,7 +7,7 @@ import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructT
  * @author Gregorio
  * @date 2020/4/8 15:23
  */
-case class Score(kemu:String,name:String,score:Int)
+case class Score1(kemu:String, name:String, score:Int)
 object SqlSelect {
   def main(args: Array[String]): Unit = {
     val spark =SparkSession.builder().master("local[*]").appName("sql").getOrCreate()

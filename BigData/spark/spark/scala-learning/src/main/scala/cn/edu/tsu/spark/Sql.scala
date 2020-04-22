@@ -1,7 +1,7 @@
 package cn.edu.tsu.spark
 
-import org.apache.spark.sql.types.{StructField, StructType,StringType,IntegerType}
-import org.apache.spark.sql.{DataFrame, Row, SQLContext, SparkSession}
+import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
+import org.apache.spark.sql.{Row, SparkSession}
 
 
 /**
@@ -29,7 +29,7 @@ object Sql  {
   def reflectRdd(spark:SparkSession): Unit ={
     import spark.implicits._
     val data=spark.sparkContext.textFile("hdfs://master:9000/data/score.txt").filter(f=>f.trim!="").map(_.split(" "))
-    val df = data.map(p=>Score(p(0),p(1),p(2).trim.toInt)).toDF()
+    val df = data.map(p=>Score1(p(0),p(1),p(2).trim.toInt)).toDF()
     df.printSchema()
     df.show()
   }
